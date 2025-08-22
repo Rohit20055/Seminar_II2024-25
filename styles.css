@@ -1,0 +1,1014 @@
+/* Global Styles */
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --dark-color: #2d3436;
+    --light-color: #f9f9f9;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6rem;
+    color: var(--dark-color);
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-size: 1.4 rem;
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+  
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px; /* Account for fixed navbar */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.7)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #218838; /* Dark green */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: bold;
+    border: 1px solid #155724;
+}
+
+.cta-button:hover {
+    background: #155724; /* Even darker green on hover */
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Destinations Section */
+.destinations {
+    padding: 5rem 5%;
+    background: var(--light-color);
+}
+
+.destinations h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--dark-color);
+}
+
+.destination-category {
+    margin-bottom: 4rem;
+}
+
+.destination-category h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.05);
+}
+
+.destination-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.destination-card p {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.explore-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+/* Heritage Section */
+.heritage {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.heritage h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heritage-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Food Section */
+.food {
+    padding: 5rem 5%;
+    background: var(--light-color);
+}
+
+.food h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.food-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Plan Trip Section */
+.plan-trip {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.plan-trip h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.trip-planner form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.trip-planner input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.trip-planner button {
+    grid-column: 1 / -1;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .trip-planner form {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .destinations h2 {
+        font-size: 2rem;
+    }
+
+    .destination-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.destination-card, .heritage-content, .food-card {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* City Details Sections */
+.city-details {
+    background: var(--light-color);
+    padding: 2rem 0;
+}
+
+.city-info {
+    display: none;
+    padding: 3rem 5%;
+}
+
+.city-info:target {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.city-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.city-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.city-header p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+/* Cuisine Section */
+.cuisine-section h3,
+.hotel-section h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.cuisine-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.cuisine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.cuisine-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cuisine-card h4 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+}
+
+.cuisine-card p {
+    padding: 0 1rem;
+    color: #666;
+}
+
+.cuisine-card .price {
+    display: block;
+    padding: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Hotel Section */
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.hotel-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.hotel-card h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.hotel-card ul {
+    list-style: none;
+}
+
+.hotel-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.hotel-name {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.price-range {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .city-header h2 {
+        font-size: 2rem;
+    }
+
+    .cuisine-section h3,
+    .hotel-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .hotel-card {
+        padding: 1.5rem;
+    }
+}
+
+/* City Pages */
+.city-pages {
+    background: var(--light-color);
+}
+
+.city-page {
+    display: none;
+    min-height: 100vh;
+    padding: 2rem 5%;
+}
+
+.city-page:target {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.city-nav {
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    color: var(--primary-color);
+}
+
+.city-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.city-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.city-header p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* City Options */
+.city-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.option-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: white;
+    color: var(--dark-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.option-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.option-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Option Content */
+.option-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.option-content.active {
+    display: block;
+}
+
+.option-content h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+}
+
+/* Places Grid */
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .city-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .option-btn {
+        width: 100%;
+    }
+
+    .city-header h2 {
+        font-size: 2rem;
+    }
+
+    .option-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Place Cards */
+.place-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.place-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 1.5rem;
+}
+
+.place-info h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.place-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.place-details {
+    display: flex;
+    gap: 1rem;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Heritage Cards */
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.heritage-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.heritage-info {
+    padding: 1.5rem;
+}
+
+.heritage-info h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.heritage-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.restaurant-info h5 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.restaurant-details {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Hotel Cards */
+.hotel-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-info {
+    padding: 1.5rem;
+}
+
+.hotel-info h5 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.hotel-details {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    margin: 1rem 0;
+}
+
+.hotel-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Transport Section */
+.transport-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.rental-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.rental-options {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.rental-options li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.transport-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+/* Common Buttons */
+.book-btn, .call-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.book-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.call-btn {
+    background: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.book-btn:hover, .call-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transport-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .restaurant-details {
+        justify-content: center;
+    }
+
+    .hotel-actions {
+        flex-direction: column;
+    }
+
+    .book-btn, .call-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Accessibility Styles */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 1001;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus styles for better accessibility */
+a:focus,
+button:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark-color);
+    position: relative;
+    transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--dark-color);
+    transition: var(--transition);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 1rem;
+    }
+}
+
+.default-image {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+    min-height: 250px;
+}
+
+img[src*="default-"] {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    min-height: 250px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific gradients for different types */
+img[src*="default-attraction"] {
+    background: linear-gradient(45deg, #e65100, #ff8f00);
+}
+
+img[src*="default-heritage"] {
+    background: linear-gradient(45deg, #8B4513, #DAA520);
+}
+
+img[src*="default-nature"] {
+    background: linear-gradient(45deg, #2E7D32, #81C784);
+}
+
+img[src*="default-culture"] {
+    background: linear-gradient(45deg, #6A1B9A, #9C27B0);
+}
+
+img[src*="default-food"] {
+    background: linear-gradient(45deg, #C62828, #FF5252);
+}
+
+img[src*="default-hotel"] {
+    background: linear-gradient(45deg, #1565C0, #42A5F5);
+}
+
+/* Add fallback text for accessibility */
+img[src*="default-"]:after {
+    content: attr(alt);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+} 
